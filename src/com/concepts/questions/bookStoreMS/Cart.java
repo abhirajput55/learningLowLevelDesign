@@ -1,7 +1,9 @@
 package com.concepts.questions.bookStoreMS;
 
+import java.util.DoubleSummaryStatistics;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 public class Cart {
 
@@ -24,6 +26,14 @@ public class Cart {
 		if(cartItems.containsKey(book)) {
 			cartItems.put(book, quantity);
 		}
+	}
+	
+	public double calculateAmount(User user) {
+
+		double sum = cartItems.entrySet().stream()
+				.collect(Collectors.summarizingDouble(a -> a.getKey().getPrice() * a.getValue())).getSum();
+
+		return sum;
 	}
 	
 }

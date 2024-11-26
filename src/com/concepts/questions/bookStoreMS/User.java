@@ -3,15 +3,15 @@ package com.concepts.questions.bookStoreMS;
 public abstract class User {
 
 	private String userId;
-	private String membershipType;
+	private MembershipType membershipType;
 	
 	
-	public User(String userId, String membershipType) {
+	public User(String userId, MembershipType membershipType) {
 		this.userId = userId;
 		this.membershipType = membershipType;
 	}
 	
-	public String getMembershipType() {
+	public MembershipType getMembershipType() {
 		return membershipType;
 	}
 	
